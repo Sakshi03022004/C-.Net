@@ -1,44 +1,48 @@
-﻿using System;
+﻿//program to demonstarte number is perfect or not
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace palindromno
+namespace perfectno
 {
+
     class demo
     {
-        int temp, rem, sum, no;
-       public void get()
+        int no, r, sum = 0;
+        public void read()
         {
             Console.WriteLine("enter the number");
             no = Convert.ToInt32(Console.ReadLine());
+            r = 1;
         }
         public void show()
         {
-            temp = no; 
-            while (no > 0)
+            while (r < no)
             {
-                rem = no % 10;
-                sum = (sum * 10) + rem;
-                no = no / 10;
+                if (no % r == 0)
+                {
+                    sum = sum + r;
+                }
+              r= r + 1;
             }
-            if (temp == sum)
+            if (no == sum)
             {
-                Console.WriteLine("given number is palindrome");
+                Console.WriteLine("number is perfect");
             }
             else
             {
-                Console.WriteLine("given number is not palindrome");
+                Console.WriteLine("number is not perfect");
             }
         }
     }
-    class palindrom
+
+    class perfectno
     {
         static void Main(string[] args)
         {
-
-            demo d1=new demo();
-            d1.get();
+            demo d1 = new demo();
+            d1.read();
             d1.show();
             Console.ReadLine();
         }
