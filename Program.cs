@@ -3,33 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace _2palindromeno
+namespace _3_perfectno
 {
-     class demo
-    {
-        int no, r, sum, temp;
+        class demo
+        {
+        int no, r, sum=0;
         public void read()
         {
             Console.WriteLine("enter the number");
             no = Convert.ToInt32(Console.ReadLine());
-            temp = no;
+            r = 1;
         }
        public void show()
         {
-            sum = 0;
-            while (no > 0)
+            while (r<no)
             {
-                r = no % 10;
-                sum = sum * 10 + r;
-                no = no / 10;
+                if (no % r == 0)
+                {
+                    sum = sum + r;
+                }
+                r = r + 1;
             }
-            if (temp == sum)
+            if (no== sum)
             {
-                Console.WriteLine("number is palindrom");
+                Console.WriteLine("number is perfect");
             }
             else
             {
-                Console.WriteLine("number is not palindrom");
+                Console.WriteLine("number is not perfect");
             }
         }
     }
@@ -47,3 +48,5 @@ namespace _2palindromeno
         }
     }
 
+
+        
