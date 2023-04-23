@@ -3,44 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace palindromno
+namespace _2palindromeno
 {
-    class demo
+     class demo
     {
-        int temp, rem, sum, no;
-       public void get()
+        int no, r, sum, temp;
+        public void read()
         {
             Console.WriteLine("enter the number");
             no = Convert.ToInt32(Console.ReadLine());
+            temp = no;
         }
-        public void show()
+       public void show()
         {
-            temp = no; 
+            sum = 0;
             while (no > 0)
             {
-                rem = no % 10;
-                sum = (sum * 10) + rem;
+                r = no % 10;
+                sum = sum * 10 + r;
                 no = no / 10;
             }
             if (temp == sum)
             {
-                Console.WriteLine("given number is palindrome");
+                Console.WriteLine("number is palindrom");
             }
             else
             {
-                Console.WriteLine("given number is not palindrome");
+                Console.WriteLine("number is not palindrom");
             }
         }
     }
-    class Program
-    {
-        static void Main(string[] args)
-        {
 
-            demo d1=new demo();
-            d1.get();
-            d1.show();
-            Console.ReadLine();
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                demo d1 = new demo();
+                d1.read();
+                d1.show();
+                Console.ReadLine();
+            }
+
         }
     }
-}
+
